@@ -4,15 +4,21 @@ require 'rake'
 begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
-    gem.name = "boilerplate"
-    gem.summary = %Q{TODO: one-line summary of your gem}
-    gem.description = %Q{TODO: longer description of your gem}
-    gem.email = "geraud@gmail.com"
-    gem.homepage = "http://github.com/geraud/boilerplate"
-    gem.authors = ["Geraud Boyer"]
-    gem.add_development_dependency "rspec", ">= 1.2.9"
+    gem.name = 'boilerplate'
+    gem.summary = %Q{Basic code for a rails app}
+    gem.description = %Q{Basic code for a rails app}
+    gem.email = 'geraud@gmail.com'
+    gem.homepage = 'http://github.com/geraud/boilerplate'
+    gem.authors = ['Geraud Boyer']
+    gem.add_development_dependency 'rspec', ">= 1.2.9"
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
+    gem.files += Dir['{lib}/**/*', '{app}/**/*', '{config}/**/*']
+    gem.add_dependency 'authlogic'
+    gem.add_dependency 'haml'
+    #  gem.add_dependency 'authlogic_openid'
+
   end
+
   Jeweler::GemcutterTasks.new
 rescue LoadError
   puts "Jeweler (or a dependency) not available. Install it with: gem install jeweler"
@@ -32,7 +38,7 @@ end
 
 task :spec => :check_dependencies
 
-task :default => :spec
+task :default => :build
 
 require 'rake/rdoctask'
 Rake::RDocTask.new do |rdoc|
