@@ -1,17 +1,14 @@
-= boilerplate
+# Boilerplate application requirements
 
-Description goes here.
+### Description
 
-== Note on Patches/Pull Requests
- 
-* Fork the project.
-* Make your feature addition or bug fix.
-* Add tests for it. This is important so I don't break it in a
-  future version unintentionally.
-* Commit, do not mess with rakefile, version, or history.
-  (if you want to have your own version, that is fine but bump version in a commit by itself I can ignore when I pull)
-* Send me a pull request. Bonus points for topic branches.
+This project helps bootstrap your rails 3 application to add basic support for
 
-== Copyright
+ - Haml & Sass
+ - JSLint
+ - Core html, css and javascript
+ - Basic authentication for Facebook, Twitter & Open ID
 
-Copyright (c) 2010 Geraud Boyer. See LICENSE for details.
+### Copyright
+
+Copyright (c) 2010 Geraud Boyer and Srikanth Agaram. See LICENSE for details.
