@@ -1,3 +1,4 @@
 Rails.application.routes.draw do |map|
-   resources :sessions, :controller => 'boilerplate/sessions', :only => [:create, :delete]
+   resources :user_sessions, :controller => 'boilerplate/user_sessions', :only => [:create, :destroy]
+
  end
