@@ -13,6 +13,7 @@ module Boilerplate
 
       ActiveSupport.on_load(:action_controller) do
         include Boilerplate::Authentication
+        include Boilerplate::FeedbackHandling
         #  include Boilerplate::Facebook unless options.disable_facebook
       end
     end

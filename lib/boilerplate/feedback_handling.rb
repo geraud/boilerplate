@@ -4,35 +4,35 @@ module Boilerplate
   protected
 
     def add_error(*fragments)
-      return add_feedback('error', *fragments)
+      add_feedback('error', *fragments)
     end
 
     def remove_error(*fragments)
-      return remove_feedback('error', *fragments)
+      remove_feedback('error', *fragments)
     end
 
     def has_error?(*fragments)
-      return has_feedback?('error', *fragments)
+      has_feedback?('error', *fragments)
     end
 
     def prioritize_errors(*args)
-      return prioritize_feedback('error', *args)
+      prioritize_feedback('error', *args)
     end
 
     def add_notice(*fragments)
-      return add_feedback('notice', *fragments)
+      add_feedback('notice', *fragments)
     end
 
     def remove_notice(*fragments)
-      return remove_feedback('notice', *fragments)
+      remove_feedback('notice', *fragments)
     end
 
     def has_notice?(*fragments)
-      return has_feedback?('notice', *fragments)
+      has_feedback?('notice', *fragments)
     end
 
     def prioritize_notices(*args)
-      return prioritize_feedback('notice', *args)
+      prioritize_feedback('notice', *args)
     end
 
   private
@@ -84,7 +84,7 @@ module Boilerplate
           end
         end
       end
-      feedback_store.subtract(entries_to_remove.flatten)
+      feedback_store.subtract(entries_to_remove.flatten).to_a
     end
 
     def make_key(*fragments)
@@ -95,8 +95,8 @@ module Boilerplate
       return flash[:feedback] ||= Set.new
     end
 
-    def self.included(action_controller)
-      action_controller.class_eval do
+    def self.included(application_controller)
+      application_controller.module_eval do
         helper_method :prioritize_errors
         helper_method :has_errors?
         helper_method :prioritize_notices

@@ -7,6 +7,7 @@ require 'active_support/dependencies/autoload'
 module Boilerplate
   extend ActiveSupport::Autoload
   autoload :Authentication
+  autoload :FeedbackHandling
 end
 
 require 'boilerplate/engine'
