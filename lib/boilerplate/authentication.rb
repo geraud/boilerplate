@@ -1,5 +1,3 @@
-require 'rails'
-
 module Boilerplate
   module Authentication
 
@@ -31,11 +29,9 @@ module Boilerplate
     end
 
     def self.included(application_controller)
-      application_controller.class_eval do
-        #  helper_method :current_user_session
+      application_controller.module_eval do
         helper_method :current_user
         helper_method :logged_in?
-        #  Authlogic::Session::Base.controller
       end
     end
 

@@ -1,7 +1,13 @@
-require 'haml'
-require 'sass'
-raise 'Boilerplate is for rails 3' unless defined?(Rails) && Rails::VERSION::MAJOR == 3
+boilerplate_path = File.expand_path('../../lib', __FILE__)
+$:.unshift(boilerplate_path) if File.directory?(boilerplate_path) && !$:.include?(boilerplate_path)
+
+require 'action_pack'
+require 'active_support/dependencies/autoload'
+
+module Boilerplate
+  extend ActiveSupport::Autoload
+  autoload :Authentication
+end
 
 require 'boilerplate/engine'
-require 'boilerplate/authentication'
-require 'boilerplate/feedback_handling'
+require 'boilerplate/railtie'
