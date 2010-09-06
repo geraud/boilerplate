@@ -8,6 +8,7 @@ module Boilerplate
   extend ActiveSupport::Autoload
   autoload :Authentication
   autoload :FeedbackHandling
+  autoload :Facebook
 end
 
 require 'boilerplate/engine'
