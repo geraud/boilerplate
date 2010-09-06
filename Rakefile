@@ -15,6 +15,7 @@ begin
     gem.files += Dir['{lib}/**/*', '{app}/**/*', '{config}/**/*']
     gem.add_dependency 'authlogic'
     gem.add_dependency 'haml'
+    gem.add_dependency 'rest-graph'
     #  gem.add_dependency 'authlogic_openid'
 
   end
