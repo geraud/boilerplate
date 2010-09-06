@@ -13,11 +13,11 @@ module Boilerplate
 
   protected
 
-    def user_table_name
-      current_table_name = Boilerplate::User.table_name
-      $stderr.puts current_table_name.inspect
-      current_table_name
-    end
+    #  def user_table_name
+    #    current_table_name = Boilerplate::User.table_name
+    #    $stderr.puts current_table_name.inspect
+    #    current_table_name
+    #  end
 
   end
 end

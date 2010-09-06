@@ -2,7 +2,7 @@ class <%= migration_class_name %> < ActiveRecord::Migration
 
   def self.up
 
-    create_table :<%= user_table_name %> do |t|
+    create_table :users do |t|
       # Authlogic
       t.string :crypted_password
       t.string :salt
@@ -23,9 +23,15 @@ class <%= migration_class_name %> < ActiveRecord::Migration
 
       t.timestamps
     end
+    add_index :users, :facebook_id
 
-    #  add_index :<%= user_table_name %>, :session_id
-    #  add_index :<%= user_table_name %>, :updated_at
+    create_table :oauth_tokens do |t|
+      t.belongs_to :user_id
+      t.string :service_name
+      t.string :token
+    end
+    add_index :oauth_tokens, :user_id
+
   end
 
   def self.down
