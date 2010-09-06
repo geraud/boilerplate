@@ -35,3 +35,26 @@ App.namespace('App.util.facebook', {
   }
 
 });
+
+/* Asynchronous way to do it:
+
+ window.fbAsyncInit = function() {
+    var create_session_url = facebook_sessions_url";
+    FB.init({ appId : facebook_app_id , status: true, cookie: true, xfbml: true});
+    FB.Event.subscribe('auth.sessionChange', function(response) {
+      if (response.session) {
+        var request =  new Ajax.Request(create_session_url, { method: 'create' });
+        // A user has logged in, and a new cookie has been saved
+        window.location = '/';
+      } else {
+        // The user has logged out, and the cookie has been cleared
+      }
+    });
+  };
+  (function() {
+    var e = document.createElement('script');
+    e.async = true;
+    e.src = document.location.protocol + '//connect.facebook.net/en_US/all.js';
+    document.getElementById('fb-root').appendChild(e);
+  }());
+*/
