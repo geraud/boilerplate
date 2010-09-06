@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Geraud Boyer"]
-  s.date = %q{2010-08-21}
+  s.date = %q{2010-09-06}
   s.description = %q{Basic code for a rails app}
   s.email = %q{geraud@gmail.com}
   s.extra_rdoc_files = [
@@ -22,13 +22,27 @@ Gem::Specification.new do |s|
      "LICENSE",
      "README.md",
      "Rakefile",
-     "app/controllers/boilerplate/sessions_controller.rb",
+     "VERSION",
+     "app/controllers/boilerplate/facebook_sessions_controller.rb",
+     "app/controllers/boilerplate/user_sessions_controller.rb",
+     "app/javascripts/application.js",
+     "app/javascripts/util/actions.js",
+     "app/javascripts/util/facebook.js",
+     "app/javascripts/util/twitter.js",
      "app/models/boilerplate/user.rb",
+     "boilerplate.gemspec",
      "config/routes.rb",
      "lib/boilerplate.rb",
+     "lib/boilerplate/authentication.rb",
      "lib/boilerplate/config.rb",
      "lib/boilerplate/engine.rb",
+     "lib/boilerplate/facebook.rb",
+     "lib/boilerplate/feedback_handling.rb",
+     "lib/boilerplate/pagination.rb",
      "lib/boilerplate/railtie.rb",
+     "lib/generators/boilerplate/migration/migration_generator.rb",
+     "lib/generators/boilerplate/migration/templates/migration.rb",
+     "lib/generators/boilerplate/update_js/update_js_generator.rb",
      "lib/tasks/boilerplate.rake",
      "spec/boilerplate_spec.rb",
      "spec/spec.opts",
@@ -52,15 +66,18 @@ Gem::Specification.new do |s|
       s.add_development_dependency(%q<rspec>, [">= 1.2.9"])
       s.add_runtime_dependency(%q<authlogic>, [">= 0"])
       s.add_runtime_dependency(%q<haml>, [">= 0"])
+      s.add_runtime_dependency(%q<rest-graph>, [">= 0"])
     else
       s.add_dependency(%q<rspec>, [">= 1.2.9"])
       s.add_dependency(%q<authlogic>, [">= 0"])
       s.add_dependency(%q<haml>, [">= 0"])
+      s.add_dependency(%q<rest-graph>, [">= 0"])
     end
   else
     s.add_dependency(%q<rspec>, [">= 1.2.9"])
     s.add_dependency(%q<authlogic>, [">= 0"])
     s.add_dependency(%q<haml>, [">= 0"])
+    s.add_dependency(%q<rest-graph>, [">= 0"])
   end
 end
 
