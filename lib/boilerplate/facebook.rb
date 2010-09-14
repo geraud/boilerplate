@@ -4,7 +4,8 @@ module Boilerplate
   protected
 
     def setup_rest_graph
-      @rest_graph = RestGraph.new
+      # load the configuration and parse the cookies
+      @rest_graph = ::RestGraph.new
       @rest_graph.parse_cookies!(cookies)
     end
 

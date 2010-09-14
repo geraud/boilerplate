@@ -20,6 +20,11 @@ module BoilerPlate
       ActiveSupport.on_load(:boilerplate) { $stderr.puts 'nhtaoeunthaoenth' } # {self.cache_store ||= RAILS_CACHE }
     end
 
+    initializer "static assets" do |app|
+      $stderr.puts "static assets #{root}"
+      app.middleware.use ::ActionDispatch::Static, "#{root}/public"
+    end
+
     initializer 'boilerplate.set_configs' do |app|
       #  paths   = app.config.paths
       options = app.config.boilerplate
@@ -33,6 +38,7 @@ module BoilerPlate
         include Boilerplate::FeedbackHandling
         include Boilerplate::Facebook # unless options.disable_facebook
       end
+
     end
 
   end

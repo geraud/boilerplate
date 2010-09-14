@@ -6,7 +6,6 @@ require 'active_support/dependencies/autoload'
 
 module Boilerplate
   extend ActiveSupport::Autoload
-  mattr_accessor :config
 
   autoload :Authentication
   autoload :FeedbackHandling
