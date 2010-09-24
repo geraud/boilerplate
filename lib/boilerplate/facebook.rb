@@ -1,3 +1,4 @@
+require 'rest-graph'
 module Boilerplate
   module Facebook
 

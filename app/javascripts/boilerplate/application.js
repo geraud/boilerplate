@@ -2,6 +2,9 @@
   var _App = window.App;
 
   var App = {
+    window : window,
+    document : document,
+
     namespace: function (namespace, contents) {
       // Add an object to a particular node in the namespace tree
       namespace = App.findOrCreateNamespace(namespace); // Ensure node exists
@@ -30,7 +33,6 @@
       }
       return current_node;
     }
-  };
 
-  window.App = App;
+  };
 })(this, this.document);

@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Geraud Boyer"]
-  s.date = %q{2010-09-13}
+  s.date = %q{2010-09-24}
   s.description = %q{Basic code for a rails app}
   s.email = %q{geraud@gmail.com}
   s.extra_rdoc_files = [
@@ -26,10 +26,10 @@ Gem::Specification.new do |s|
      "app/controllers/boilerplate/facebook_sessions_controller.rb",
      "app/controllers/boilerplate/user_sessions_controller.rb",
      "app/helpers/javascript_helper.rb",
-     "app/javascripts/application.js",
-     "app/javascripts/util/actions.js",
-     "app/javascripts/util/facebook.js",
-     "app/javascripts/util/twitter.js",
+     "app/javascripts/boilerplate/application.js",
+     "app/javascripts/boilerplate/util/actions.js",
+     "app/javascripts/boilerplate/util/facebook.js",
+     "app/javascripts/boilerplate/util/twitter.js",
      "app/models/boilerplate/user.rb",
      "boilerplate.gemspec",
      "config/routes.rb",
