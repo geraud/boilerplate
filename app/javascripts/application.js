@@ -9,9 +9,11 @@
         var property_value = contents[property_name];
         // If the property is a function, bind it to the current node in the namespace tree
         if (typeof(property_value) == 'function') {
-          namespace[property_name] = function () {
-            property_value.apply(namespace, arguments)
-          };
+          namespace[property_name] = function (scope, fn) {
+            return function () {
+              fn.apply(scope, arguments);
+            }
+          }(namespace, property_value);
         }
         else {
           namespace[property_name] = contents[property_name];
