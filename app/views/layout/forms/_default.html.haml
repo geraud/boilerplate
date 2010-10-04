@@ -1,0 +1,27 @@
+- if %w(string password).include?(input_type.to_s)
+  %p.text
+    = form.label(method_name, t("#{object_name}.#{method_name}.label"), label_options)
+    - case input_type
+    - when :string
+      = form.text_field(method_name, input_options)
+    - when :password
+      = form.password_field(method_name, input_options)
+    - else
+      - raise "Unsupported input type: #{input_type}"
+    - unless errors.blank?
+      - process_feedback(:error, object_name, method_name, errors) do |feedback_kind, feedback_element_id, feedback_text|
+        .feedback.hidden{:class => feedback_kind, :id => feedback_element_id}!= feedback_text
+- else
+
+  - case input_type
+  - when :base
+    - unless errors.blank?
+      - process_feedback(:error, object_name, method_name, errors) do |feedback_kind, feedback_element_id, feedback_text|
+        .feedback.hidden{:class => feedback_kind, :id => feedback_element_id}!= feedback_text
+  - when :submit
+    %p.submit
+      = form.submit(input_options)
+  - when :hidden
+    = form.hidden_field method_name, input_options
+  - else
+    - raise "Unsupported input type: #{input_type}"
